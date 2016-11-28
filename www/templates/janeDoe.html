@@ -1,0 +1,62 @@
+g<ion-view title="Jane Doe" id="page6" class=" ">
+    <ion-content padding="true" class="has-header">
+        
+        <form id="janeDoe-form2" class="list ">
+            <label class="item item-input " id="janeDoe-textarea2" name="patientid">
+                <span class="input-label">MRN: 43567</span><textarea placeholder=""></textarea>
+            </label>
+            <label class="item item-input " id="janeDoe-textarea3" name="patientdob">
+                <span class="input-label">DOB: 07/14/62</span><textarea placeholder=""></textarea>
+            </label>
+            <label class="item item-input " id="janeDoe-textarea6">
+                <span class="input-label">Gender: Female</span><textarea placeholder=""></textarea>
+            </label>
+            <label class="item item-input " id="janeDoe-textarea5">
+                <span class="input-label">Ethnicity: African American</span><textarea placeholder=""></textarea>
+            </label>
+            <ion-item class="item-icon-right  " id="janeDoe-list-item11">Medications: n/a
+                <span class="item-note">Allergies: penicillin</span>
+                <i class="icon ion-alert"></i>
+            </ion-item>
+        </form>
+        <h3 id="janeDoe-heading1" style="color:#000000;text-align:center;" class=" ">Diagnosis</h3>
+        <p id="janeDoe-markdown2" style="color:#000000;font-size:20px;" class=" ">
+            Date of Diagnosis: 01/1/2015
+            <br>Primary Site: Lung
+            <br>Subtissue: NS
+            <br>Histology: Carcinoma
+            <br>SubHistology: Adenocarcinoma</p>
+            <h4 id="janeDoe-heading1" style="color:#000000;text-align:center;" class=" ">Synoptic Pathology Report</h4>
+              <p id="janeDoe-markdown2" style="color:#000000;font-size:20px;" class=" ">
+            <br>
+            <br>Stage IIIA (T3N1MØ)
+            <br>Status: Untreated, Inoperable
+
+          </p>
+
+        <a  ng-click="GotoLink('http://cancer.sanger.ac.uk/cosmic/browse/tissue#sn=lung&ss=all&hn=all&sh=non_small_cell_carcinoma&in=t&src=tissue&all_data=n')" id="button1" class=" button button-positive  button-block ">More information: (link to COSMIC)</a>
+      <!--  <a href="#" onclick="window.open('http://cancer.sanger.ac.uk/cosmic/browse/tissue#sn=lung&ss=all&hn=all&sh=non_small_cell_carcinoma&in=t&src=tissue&all_data=n', '_self', 'location=yes'); return false;"
+        id="janeDoe-button2" class=" button button-positive  button-block ">More information: (link to COSMIC)</a>-->
+        <div class="spacer" style="width: 748px; height: 32px;"></div>
+        <h3 id="janeDoe-heading3" style="color:#000000;text-align:center;" class=" ">Patient Gene Sequencing Reports</h3>
+        <div id="janeDoe-button-bar2" class=" button-bar ">
+            <a ui-sref="menu.tP53GeneVariants" id="janeDoe-button6" style="border-radius:-2px -2px -2px -2px;" class=" button button-positive  button-block ">TP53</a>
+            <a ui-sref="menu.eGFRGeneVariants" id="janeDoe-button10" style="border-radius:-1px -1px -1px -1px;" class=" button button-positive  button-block ">EGFR</a>
+            <a ui-sref="menu.CDH1GeneVariants" id="janeDoe-button9" style="border-radius:-2px -2px -2px -2px;" class=" button button-positive  button-block ">KRAS</a>
+
+        </div>
+
+        <div class="spacer" style="width: 748px; height: 48px;"></div>
+        <h3 id="janeDoe-heading5" style="color:#000000;text-align:center;" class=" ">Plan</h3>
+        <a  ng-click="GotoLink('http://hemonc.org/wiki/Main_Page')" id="button1" class=" button button-positive  button-block ">Link to HemOnc</a>
+        <!--<a href="#" onclick="window.open('http://hemonc.org/wiki/Breast_cancer', '_system', 'location=yes'); return false;" id="janeDoe-button12" class=" button button-positive  button-block ">Treatment Options</a> -->
+    </ion-content>
+</ion-view>
+
+<style>
+
+.has-header{
+  background:white;
+}
+
+</style>
