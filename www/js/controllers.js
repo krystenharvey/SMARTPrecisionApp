@@ -23,6 +23,31 @@ angular.module('app.controllers', [])
 
 })
 
+.controller('JohnDoeCtrl', function($scope) {
+
+  $scope.GotoLink = function (url) {
+   window.open(url,'_system');
+ }
+
+
+   $scope.myGoBack = function() {
+     $ionicHistory.goBack();
+   };
+
+})
+
+.controller('MarySmithCtrl', function($scope) {
+
+  $scope.GotoLink = function (url) {
+   window.open(url,'_system');
+ }
+
+   $scope.myGoBack = function() {
+     $ionicHistory.goBack();
+   };
+
+})
+
 .controller('patientsCtrl', function($scope) {
 
 })
@@ -30,7 +55,7 @@ angular.module('app.controllers', [])
 .controller('tP53GeneVariantsCtrl', function($scope, $http,$ionicHistory) {
 
   $scope.GotoLink = function (url) {
-   window.open(url,'_system');
+   window.open(url,'_self');
  }
 
   $scope.myGoBack = function() {
@@ -49,6 +74,9 @@ angular.module('app.controllers', [])
   function renderBubbleGraph(data){
     function draw(){
       var div = d3.select("#hoverinfo");
+      div.style('font-size','30px');
+      div.html("The graph below visualizes the top 20 TP53 variants. </br> Click to navigate through population frequencies and drug sensitivies.")
+
 
       var margin = {top: 20, right: 100, bottom: 50, left: 60},
 
@@ -204,6 +232,7 @@ console.log(data);
                             .attr("r", 15)
                             .on('click',function (d)
                               {
+                                div.style('font-size','20px');
                                 div.html('<b>Gene: </b>TP53'+'<br/><b>AA Mutation: </b>'+d.AAMutation+'<br/><b>CDS Mutation: </b>'+d.CMutation+'<br/><b>Position: </b>'+d.Position+'<br/><b>Resistance: </b>'+d.Resistant+'<br/><b>Sensitivity: </b>'+d.Sensitive+"<br/><b>Frequency: </b>"+d.Count);
                               });
 
@@ -298,20 +327,11 @@ $(window).resize(function() {
 
 })
 
-.controller('pIK3CAGeneVariantsCtrl', function($scope,$http) {
 
-
-
-})
-
-.controller('bRAFGeneVariantsCtrl', function($scope, $http) {
-
-
-})
 
 .controller('eGFRGeneVariantsCtrl', function($scope, $http) {
   $scope.GotoLink = function (url) {
-   window.open(url,'_system');
+   window.open(url,'_self');
  }
 
  $scope.myGoBack = function() {
@@ -749,7 +769,7 @@ drawLegend();
 
 d3.json("js/KRASdata3.json", function(error, data) {
   $scope.GotoLink = function (url) {
-   window.open(url,'_system');
+   window.open(url,'_self');
  }
 
 
@@ -757,6 +777,9 @@ d3.json("js/KRASdata3.json", function(error, data) {
      $ionicHistory.goBack();
    };
 
+var div2 = d3.select('#hoverinfo')
+div2.style('font-size','30px');
+div2.html('This graph visualizes the top 20 EGFR variants. </br>Click to navigate through population frequencies and drug sensitivies.')
 var w = 630;
 var h = 630;
 var r = (500)/2;
@@ -803,10 +826,11 @@ arcs.append("svg:path")
     return 0;
   })
    .on("click", function(d) {
-     var div2 = d3.select('#hoverinfo');
+
      div2.transition()
      .duration(75)
      .style("opacity", .9)
+     .style('font-size','21px');
      div2.html('<b>Gene: </b>KRAS'+'<br/><b>AAMutation: </b>'+d.data.AAMutation+'<br/><b>CDSMutation: </b>'+d.data.CDSMutation+'<br/><b>Count: </b>'+d.data.Count+'<br/><b>Position: </b>'+d.data.Position+'<br/><b>Drug Info: </b>'+d.data.Drugs);
 
      console.log(d.data.Stroke);

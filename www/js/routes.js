@@ -42,6 +42,27 @@ angular.module('app.routes', [])
     }
   })
 
+  .state('menu.johnDoe', {
+    url: '/patient id=43568',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/JohnDoe.html',
+        controller: 'JohnDoeCtrl'
+      }
+    }
+  })
+
+  .state('menu.MarySmith', {
+    url: '/patient id=43569',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/MarySmith.html',
+        controller: 'MarySmithCtrl'
+      }
+    }
+  })
+
+
   .state('menu.patients', {
     url: '/page8patients',
     views: {
